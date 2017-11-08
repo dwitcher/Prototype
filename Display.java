@@ -14,7 +14,19 @@ public class Display {
 
     public void displayEmployee(Employee emp)
     {
-
+        //Console display of each employee's information
+        System.out.println("Employee Name: " + emp.getFirstName() + " " + emp.getLastName());
+        System.out.println("--------------------");
+        System.out.println("Employee ID: " + emp.getEmpId());
+        System.out.println("Password: " + emp.getPassword());
+        System.out.println("Pay Rate: " + emp.getPayRate());
+        System.out.println("Hours Worked: " + emp.getHoursWorked());
+        System.out.println("Clearance Level: " + emp.getClearanceLevel());
+        System.out.println("Last Clock In: " + emp.getLastClockIn());
+        System.out.println("Last Clock Out: " + emp.getLastClockOut()); //Can be inconsistent with the clock in if the employee is currently logged in
+       
+        //Print Times worked as well? Can potentially use a foreach or something similar for the dictTimeWorked
+        System.out.println("--------------------");
     }
 
     public void displayEmployees(List<Employee> employees)
@@ -63,6 +75,14 @@ public class Display {
     private void changePassword()
     {
         //logic for changing password
+        /*  POTENTIAL LOGIC
+            1. Verify if they're logged in already (if we want only the logged in user to be able to do so)
+            2. If so, require them to enter their current password
+            3. Check this entry across the database/dummy data (foreach or logical equivalent w/ boolean flag when found)
+            4. If this matches, prompt them to enter a new password (string compare for equality - case sensitive (?))
+            5. Validate password with reentry? 
+            6. Display confirmation upon successful password change 
+        */
     }
 
     public void displayAdminOptions()
@@ -72,7 +92,7 @@ public class Display {
 
     public void displayWelcome()
     {
-
+        //Splashscreen information here? 
     }
 
     public boolean login() {
