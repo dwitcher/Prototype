@@ -80,15 +80,17 @@ public class Display {
             System.out.print("Please enter your current password to continue: ");
             String currPassword;
             currPassword = input.next();
-            if(timeTracker.currentlyLoggedIn.getPassword().equals(currPassword))
-            {
+            if(timeTracker.currentlyLoggedIn.getPassword().equals(currPassword)) {
                 System.out.print("\nPlease enter your new password: ");
                 String newPassword1 = input.next();
                 System.out.print("\nPlease reenter your new password: ");
                 String newPassword2 = input.next();
 
-                if(newPassword1.equals(newPassword2))
+                if (newPassword1.equals(newPassword2))
+                {
                     timeTracker.currentlyLoggedIn.changePassword(newPassword1);
+                    System.out.println("Password successfully changed!");
+                }
                 else
                     System.out.println("\nPasswords do not match. Please try again.");
 
