@@ -3,8 +3,8 @@ import java.util.Scanner;
 
 public class Display {
 
-    TimeTracker timeTracker;
-    Scanner input;
+    private TimeTracker timeTracker;
+    private Scanner input;
 
     public Display(TimeTracker timeTracker) {
         this.timeTracker = timeTracker;
