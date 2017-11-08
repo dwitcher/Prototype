@@ -12,5 +12,9 @@ public class Prototype {
         //retrieveEmployeeData(); //TODO: Create text file to serve as pseudo-database for pulling information
         //showSplashScreen(); //using method from http://www.javapractices.com/topic/TopicAction.do?Id=149
         //EventQueue.invokeLater(new SplashScreenCloser());
+
+        TimeTracker timeTracker = new TimeTracker();
+        timeTracker.run();
+
     }
 }
