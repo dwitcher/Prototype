@@ -8,7 +8,7 @@ public class TimeTracker
     private static HashMap<String, Employee> employees;
     private Display display;
     boolean keepRunning;
-    private static Employee currentlyLoggedIn;
+    public static Employee currentlyLoggedIn;
 
     public TimeTracker()
     {

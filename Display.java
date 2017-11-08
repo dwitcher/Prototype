@@ -74,6 +74,28 @@ public class Display {
 
     private void changePassword()
     {
+
+        if(timeTracker.currentlyLoggedIn != null)
+        {
+            System.out.print("Please enter your current password to continue: ");
+            String currPassword;
+            currPassword = input.next();
+            if(timeTracker.currentlyLoggedIn.getPassword().equals(currPassword))
+            {
+                System.out.print("\nPlease enter your new password: ");
+                String newPassword1 = input.next();
+                System.out.print("\nPlease reenter your new password: ");
+                String newPassword2 = input.next();
+
+                if(newPassword1.equals(newPassword2))
+                    timeTracker.currentlyLoggedIn.changePassword(newPassword1);
+                else
+                    System.out.println("\nPasswords do not match. Please try again.");
+
+            }
+            else
+                System.out.println("Incorrect password. Please try again.");
+        }
         //logic for changing password
         /*  POTENTIAL LOGIC
             1. Verify if they're logged in already (if we want only the logged in user to be able to do so)
