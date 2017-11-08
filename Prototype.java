@@ -6,13 +6,18 @@ import java.util.List;
 Use milliseconds for
  */
 public class Prototype {
+<<<<<<< HEAD
     public static void main(String[] args) throws IOException
     {
+=======
+    public static void main(String[] args) throws IOException {
+>>>>>>> development
         //List<cEmployee> lstValidEmployees = retrieveEmployeeData();
 
         //retrieveEmployeeData(); //TODO: Create text file to serve as pseudo-database for pulling information
         //showSplashScreen(); //using method from http://www.javapractices.com/topic/TopicAction.do?Id=149
         //EventQueue.invokeLater(new SplashScreenCloser());
+<<<<<<< HEAD
     }
 
     /*
@@ -109,3 +114,11 @@ class TireOrder
     final static double MANDATORY_TIRE_FEE = 10;
 
 }
+=======
+
+        TimeTracker timetracker = new TimeTracker();
+        timetracker.run();
+
+    }
+}
+>>>>>>> development
