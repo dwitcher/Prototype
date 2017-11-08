@@ -14,7 +14,7 @@ public class Employee {
     private boolean isClockedIn;
     private double payRate;
     private double hoursWorked;
-    private int clearanceLevel;
+    protected int clearanceLevel;
     //Key: Date worked
     //Value: Hours worked w/ respective date appended.
     private HashMap<String, String> dictTimeWorked;

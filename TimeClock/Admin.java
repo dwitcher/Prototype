@@ -5,7 +5,8 @@ public class Admin extends Employee
 
     public Admin()
     {
-        
+        super();
+        clearanceLevel = 5;
     }
 
     public void adjustPayroll()

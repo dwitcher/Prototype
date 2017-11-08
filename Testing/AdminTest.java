@@ -2,23 +2,25 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.Before;
 
-public class EmployeeTest {
+public class AdminTest {
 
-    Employee e;
+    Admin e;
+    TimeTracker t;
 
     @Before
     public void init()
     {
-        e = new Employee();
+        e = new Admin();
+        t = new TimeTracker();
     }
 
     @Test
-    public void testEmployee()
+    public void testAdmin()
     {
         Assert.assertEquals("password", e.getPassword());
         Assert.assertEquals("Test", e.getFirstName());
         Assert.assertEquals("Employee", e.getLastName());
-        Assert.assertEquals(0, e.getClearanceLevel());
+        Assert.assertEquals(5, e.getClearanceLevel());
         Assert.assertEquals("", e.getLastClockIn()); //returning null
         Assert.assertEquals("", e.getLastClockOut()); //returning null
         Assert.assertEquals(0, e.getEmpId());
@@ -41,12 +43,53 @@ public class EmployeeTest {
         e.isClockedIn();
         e.loadInformation();
         e.setInformation();
+        e.addEmployee(new Employee());
+        e.adjustHours();
+        e.adjustPayroll();
+        e.removeEmployee(0);
+    }
+
+    @Test
+    public void testRemoveEmployee()
+    {
+        e = new Admin();
+        //todo: right now we add 2 employees in t.loadData()
+        //todo: testing for 2 at the moment, change later
+        Assert.assertEquals(2, t.employees.size());
+        e.removeEmployee(0);
+        Assert.assertEquals(1, t.employees.size());
+
+    }
+
+    @Test
+    public void testAdjustHours()
+    {
+
+    }
+
+    @Test
+    public void testAdjustPayroll()
+    {
+
+    }
+
+    @Test
+    public void testAddEmployee()
+    {
+        e = new Admin();
+        //todo: right now we add 2 employees in t.loadData()
+        //todo: testing for 2 at the moment, change later
+
+        Assert.assertEquals(2, t.employees.size());
+        e.addEmployee(new Employee());
+        Assert.assertEquals(3, t.employees.size());
+
     }
 
     @Test
     public void testChangePassword()
     {
-        e = new Employee();
+        e = new Admin();
         Assert.assertEquals("password", e.getPassword());
         e.changePassword("newpassword");
         Assert.assertEquals("newpassword", e.getPassword());
@@ -55,7 +98,7 @@ public class EmployeeTest {
     @Test
     public void testClocking()
     {
-        e = new Employee();
+        e = new Admin();
         e.clockIn();
         Assert.assertEquals(true, e.isClockedIn());
         Assert.assertNotNull(e.getLastClockIn());
@@ -68,7 +111,7 @@ public class EmployeeTest {
     @Test
     public void testSalary()
     {
-        e = new Employee();
+        e = new Admin();
         //Todo: actual salary calculations
         Assert.assertEquals(0.0, e.calculateSalary(), 0.000001);
 
@@ -85,5 +128,4 @@ public class EmployeeTest {
     {
         //todo: should we allow setting information after constructor?
     }
-
 }

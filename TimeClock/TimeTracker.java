@@ -4,10 +4,9 @@ import java.util.HashMap;
 public class TimeTracker
 {
 
-    //private ArrayList<Employee> employees;
-    private static HashMap<String, Employee> employees;
+    public static HashMap<String, Employee> employees;
     private Display display;
-    boolean keepRunning;
+    private boolean keepRunning;
     public static Employee currentlyLoggedIn;
 
     public TimeTracker()
