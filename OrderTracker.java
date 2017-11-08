@@ -11,6 +11,14 @@ public class OrderTracker {
 
     public void createNewOrder()
     {
+        //implement later
+    }
 
+    public void removeOrder()
+    {
+        //implement later
+        int index = 0; //find index to remove?
+        orders.get(index).deleteRecord();
+        orders.remove(index);
     }
 }
