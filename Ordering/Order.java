@@ -6,9 +6,9 @@ public class Order
     private String creditCard;
     private String requiredInformation;
     //booleans that we can use and then add the price later.  - 10A
-    private bool SparkPlugs;
-    private bool nitro;
-    private bool Rims;
+    private boolean SparkPlugs;
+    private boolean nitro;
+    private boolean Rims;
     
     final static double MANDATORY_TIRE_FEE = 10;
 
